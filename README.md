@@ -1,0 +1,1 @@
+# Petit guide pour installer KDE et i3wm
