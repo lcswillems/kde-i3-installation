@@ -1,0 +1,204 @@
+# Doc : http://i3wm.org/docs/userguide.html
+
+###############################
+#            GENERAL          #
+###############################
+
+# Modifier
+set $mod Mod4
+
+# Bindings for reloading / restarting the configuration
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+
+###############################
+#          APPEARENCE         #
+###############################
+
+# Fonts
+font pango:Font Awesome, Ubuntu 10
+
+# Borders
+new_window pixel 1
+new_float pixel 1
+
+# Kill KDE desktop
+exec --no-startup-id killall plasmashell
+
+# Background picture
+exec --no-startup-id feh --bg-scale /mnt/Data/Documents/Objets/Ordinateur/Wallpaper.png
+
+# Bar
+bar {
+    status_command i3status
+}
+
+###############################
+#           WINDOW            #
+###############################
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Binding for killing the focused window
+bindsym $mod+q kill
+
+# Bindings for changing the focused window
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Bindings for changing the display mode
+bindsym $mod+a fullscreen toggle
+bindsym $mod+f floating toggle
+bindsym $mod+z layout tabbed
+bindsym $mod+e layout toggle split
+
+# Bindings for changing the split mode (vertical or horizontal)
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+# Binding for changing the focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Bindings for moving a window inside the previous or next workspace
+bindsym $mod+Ctrl+Left move left
+bindsym $mod+Ctrl+Down move down
+bindsym $mod+Ctrl+Up move up
+bindsym $mod+Ctrl+Right move right
+
+###############################
+#            MODES            #
+###############################
+
+# Mode for moving a floating window
+mode "move" {
+    bindsym Left  move left
+    bindsym Down  move down
+    bindsym Up    move up
+    bindsym Right move right
+
+    # Bindings for going back to default mode: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "move" focus floating
+
+# Mode for resizing a window
+mode "resize" {
+    bindsym Left resize shrink width 5 px or 5 ppt
+    bindsym Down resize grow height 5 px or 5 ppt
+    bindsym Up resize shrink height 5 px or 5 ppt
+    bindsym Right resize grow width 5 px or 5 ppt
+
+    # Bindings for going back to default mode: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+###############################
+#        WORKSPACES           #
+###############################
+
+# Workspaces
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5: ?"
+set $ws6 "6: ?"
+set $ws7 "7: ?"
+set $ws8 "8: ?"
+set $ws9 "9: ?"
+set $ws10 "10: "
+
+# Bindings for displaying a specific workspace
+bindsym $mod+ampersand workspace $ws1
+bindsym $mod+eacute workspace $ws2
+bindsym $mod+quotedbl workspace $ws3
+bindsym $mod+apostrophe workspace $ws4
+bindsym $mod+parenleft workspace $ws5
+bindsym $mod+minus workspace $ws6
+bindsym $mod+egrave workspace $ws7
+bindsym $mod+underscore workspace $ws8
+bindsym $mod+ccedilla workspace $ws9
+bindsym $mod+agrave workspace $ws10
+
+# Bindings for changing the window's workspace
+bindsym $mod+Ctrl+ampersand move container to workspace $ws1; workspace $ws1
+bindsym $mod+Ctrl+eacute move container to workspace $ws2; workspace $ws2
+bindsym $mod+Ctrl+quotedbl move container to workspace $ws3; workspace $ws3
+bindsym $mod+Ctrl+apostrophe move container to workspace $ws4; workspace $ws4
+bindsym $mod+Ctrl+parenleft move container to workspace $ws5; workspace $ws5
+bindsym $mod+Ctrl+minus move container to workspace $ws6; workspace $ws6
+bindsym $mod+Ctrl+egrave move container to workspace $ws7; workspace $ws7
+bindsym $mod+Ctrl+underscore move container to workspace $ws8; workspace $ws8
+bindsym $mod+Ctrl+ccedilla move container to workspace $ws9; workspace $ws9
+bindsym $mod+Ctrl+agrave move container to workspace $ws10; workspace $ws10
+
+# Default workspaces layout
+workspace_layout tabbed
+
+# Force some apps to open in specific workspaces
+assign [class="Code"]                          $ws1
+assign [class="dolphin"]                       $ws2
+assign [class="Google-chrome"]                 $ws3
+assign [class="konsole"]                       $ws4
+assign [class="Spotify"]                       $ws10
+for_window [class="Spotify"] move to workspace $ws10
+assign [class="Anoise"]                        $ws10
+
+###############################
+#         Components          #
+###############################
+
+# Enable Touchpad tapping
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+# Enable Touchpad natural scrolling
+exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Natural Scrolling Enabled" 1
+
+# Bindings for increasing / decreasing the audio volume
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Binding for suspend / rebooting / shutting down / loggin out
+bindsym $mod+Pause exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout 1 0 -1
+
+###############################
+#            APPS             #
+###############################
+
+# Some abstract apps
+set $runner krunner
+set $editor code
+set $explorer dolphin /mnt/Data
+set $browser google-chrome
+set $terminal i3-sensible-terminal
+set $music spotify
+set $anoise anoise
+
+# Default layout of some apps
+for_window [class="Anoise"] floating disable
+for_window [class="plasmawindowed"] floating enable
+
+# Bindings for quick starting some apps
+bindsym $mod+s exec $runner
+bindsym Print exec spectacle -f -g
+bindsym $mod+Print exec spectacle -a -g
+bindsym $mod+Shift+Print exec spectacle -r -g
+
+# Binding for displaying wifi
+bindsym $mod+n exec --no-startup-id 'killall plasmawindowed; plasmawindowed --statusnotifier org.kde.plasma.networkmanagement'
+
+# Start often used apps
+exec $editor
+exec $explorer
+exec $browser
+exec $terminal
+exec $music
+exec $anoise
+exec --no-startup-id i3-msg 'workspace $ws1'
