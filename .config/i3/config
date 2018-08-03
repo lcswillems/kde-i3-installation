@@ -192,7 +192,7 @@ bindsym $mod+Print exec spectacle -a -g
 bindsym $mod+Shift+Print exec spectacle -r -g
 
 # Binding for displaying wifi
-bindsym $mod+n exec --no-startup-id 'killall plasmawindowed; plasmawindowed --statusnotifier org.kde.plasma.networkmanagement'
+bindsym $mod+n exec --no-startup-id "killall plasmawindowed; plasmawindowed --statusnotifier org.kde.plasma.networkmanagement"
 
 # Start often used apps
 exec $editor
