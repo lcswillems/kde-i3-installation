@@ -53,3 +53,5 @@ Elle crée un script dans le dossier `~/.config/plasma-workspace/env` (qui sera 
     Adaptez ces lignes en fonction des applications que vous avez.
     - Les "apps" (lignes 175 à 204). \
     Adaptez ces lignes en fonction des applications que vous avez.
+
+Si quand vous démarrez votre session, vous n'avez pas internet. Faîtes `$mod+n` : le gestionnaire de réseau va s'ouvrir et vous pourrez vous connecter au réseau que vous souhaitez.
