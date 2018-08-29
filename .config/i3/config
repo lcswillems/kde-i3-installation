@@ -158,6 +158,7 @@ bindsym $mod+Pause exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.k
 
 # Bindings for quick starting some apps
 bindsym $mod+s exec krunner
+bindsym $mod+b exec google-chrome
 bindsym $mod+t exec konsole
 bindsym $mod+k exec kcalc
 bindsym $mod+n exec --no-startup-id "killall plasmawindowed; plasmawindowed --statusnotifier org.kde.plasma.networkmanagement"
