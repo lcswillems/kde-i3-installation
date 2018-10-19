@@ -108,7 +108,9 @@ bindsym $mod+Ctrl+agrave move container to workspace $ws10; workspace $ws10
 assign [class="Code"]                          $ws1
 assign [class="dolphin"]                       $ws2
 assign [class="Google-chrome"]                 $ws3
-assign [class="konsole"]                       $ws4
+assign [class="Thunderbird"]                   $ws4
+assign [class="konsole"]                       $ws5
+assign [class="okular"]                        $ws6
 assign [class="Spotify"]                       $ws10
 for_window [class="Spotify"] move to workspace $ws10
 assign [class="Anoise"]                        $ws10
@@ -158,18 +160,17 @@ bindsym $mod+Pause exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.k
 
 # Bindings for quick starting some apps
 bindsym $mod+s exec krunner
-bindsym $mod+b exec google-chrome
-bindsym $mod+t exec konsole
 bindsym $mod+k exec kcalc
-bindsym $mod+n exec --no-startup-id "killall plasmawindowed; plasmawindowed --statusnotifier org.kde.plasma.networkmanagement"
 bindsym $mod+c exec plasmawindowed org.kde.plasma.calendar
+bindsym $mod+n exec --no-startup-id "killall plasmawindowed; plasmawindowed --statusnotifier org.kde.plasma.networkmanagement"
 bindsym Print exec spectacle -f -g
 bindsym $mod+Print exec spectacle -r -g
 
 # Start often used apps
 exec code
-exec dolphin /mnt/Data
+exec dolphin
 exec google-chrome
+exec thunderbird
 exec i3-sensible-terminal
 exec spotify
 exec anoise
