@@ -1,4 +1,4 @@
-# Marche à suivre pour installer et configurer Kubuntu et i3wm
+# Installer et configurer Kubuntu et i3wm
 
 Ce document a pour but de vous proposer la marche que j'ai suivie (et mis beaucoup de temps à trouver) pour installer et configurer Kubuntu et i3wm en un minimum de temps. Il s'adresse à des personnes ayant déjà un petit peu d'expérience avec Linux.
 
