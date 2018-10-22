@@ -27,10 +27,6 @@ bindsym $mod+q kill
 bindsym $mod+a fullscreen toggle
 bindsym $mod+f floating toggle
 
-# Bindings for changing the split mode of a window
-bindsym $mod+Mod1+h split h
-bindsym $mod+Mod1+v split v
-
 # Bindings for moving a window
 bindsym $mod+Left move left
 bindsym $mod+Down move down
