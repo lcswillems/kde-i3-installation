@@ -56,10 +56,6 @@ bindsym $mod+Next focus right
 # Default windows layout
 workspace_layout tabbed
 
-# Default layout of some windows
-for_window [class="Anoise"] floating disable
-for_window [class="plasmawindowed"] floating enable
-
 # Bindings for changing windows layout
 bindsym $mod+z layout tabbed
 bindsym $mod+h layout splith
@@ -69,7 +65,7 @@ bindsym $mod+v layout splitv
 set $ws1 "1: "
 set $ws2 "2: "
 set $ws3 "3: "
-set $ws4 "4: "
+set $ws4 "4: "
 set $ws5 "5: ?"
 set $ws6 "6: ?"
 set $ws7 "7: ?"
@@ -100,17 +96,6 @@ bindsym $mod+Ctrl+egrave move container to workspace $ws7; workspace $ws7
 bindsym $mod+Ctrl+underscore move container to workspace $ws8; workspace $ws8
 bindsym $mod+Ctrl+ccedilla move container to workspace $ws9; workspace $ws9
 bindsym $mod+Ctrl+agrave move container to workspace $ws10; workspace $ws10
-
-# Force some apps to open in specific workspaces
-assign [class="Code"]                          $ws1
-assign [class="dolphin"]                       $ws2
-assign [class="Google-chrome"]                 $ws3
-assign [class="Thunderbird"]                   $ws4
-assign [class="konsole"]                       $ws5
-assign [class="okular"]                        $ws6
-assign [class="Spotify"]                       $ws10
-for_window [class="Spotify"] move to workspace $ws10
-assign [class="Anoise"]                        $ws10
 
 # Select the default workspace
 exec --no-startup-id i3-msg 'workspace $ws1'
@@ -157,9 +142,13 @@ bindsym $mod+Pause exec --no-startup-id qdbus org.kde.ksmserver /KSMServer org.k
 
 # Bindings for quick starting some apps
 bindsym $mod+s exec krunner
-bindsym $mod+k exec kcalc
+bindsym $mod+e exec dolphin
+bindsym $mod+t exec thunderbird
+bindsym $mod+d exec discord
+bindsym $mod+k exec konsole
+bindsym $mod+m exec kcalc
 bindsym $mod+c exec plasmawindowed org.kde.plasma.calendar
-bindsym $mod+n exec --no-startup-id "killall plasmawindowed; plasmawindowed --statusnotifier org.kde.plasma.networkmanagement"
+bindsym $mod+n exec plasmawindowed org.kde.plasma.networkmanagement
 bindsym Print exec spectacle -f -g
 bindsym $mod+Print exec spectacle -r -g
 
@@ -167,7 +156,21 @@ bindsym $mod+Print exec spectacle -r -g
 exec code
 exec dolphin
 exec google-chrome
-exec thunderbird
-exec i3-sensible-terminal
 exec spotify
 exec anoise
+
+# Force some apps to open in specific workspaces
+assign [class="Code"]                          $ws1
+assign [class="dolphin"]                       $ws2
+assign [class="Google-chrome"]                 $ws3
+assign [class="Thunderbird"]                   $ws4
+assign [class="discord"]                       $ws4
+assign [class="konsole"]                       $ws5
+assign [class="okular"]                        $ws6
+assign [class="Spotify"]                       $ws10
+for_window [class="Spotify"] move to workspace $ws10
+assign [class="Anoise"]                        $ws10
+
+# Default layout of some apps
+for_window [class="Anoise"] floating disable
+for_window [class="plasmawindowed"] floating enable
