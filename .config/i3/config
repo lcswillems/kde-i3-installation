@@ -16,8 +16,9 @@ bindsym $mod+r restart
 ###############################
 
 # Window's borders
-new_window pixel 1
-new_float pixel 1
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders both
 
 # Binding for killing a window
 bindsym $mod+q kill
