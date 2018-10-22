@@ -45,13 +45,10 @@ Elle crée un script dans le dossier `~/.config/plasma-workspace/env` (qui sera 
 **Attention** : avant de redémarrer votre session pour pouvoir utiliser i3wm, je vous conseille très fortement de :
 1. lire les 2 fichiers de configuration, surtout `.config/i3/config`, dans lequel je définis des raccourcis claviers qui doivent être nécessairement connus sous peine de ne pouvoir rien faire.
 2. adapater certaines parties de la configuration en fonction des fichiers et des applications que vous avez. Ces parties sont exactement :
-    - La "background picture" (ligne 29). \
+    - L'image de fond (ligne 123). \
     Remplacez le fichier par l'endroit où se trouve votre image de fond.
-    - Les "workspaces" (lignes 106 à 115). \
+    - Le nom des workspaces (lignes 65 à 74). \
     Définissez les workspaces que vous voulez en fonction de vos applications.
-    - Les "applications forcées à souvrir dans un workspace spécifique" (ligne 145 à 151). \
-    Adaptez ces lignes en fonction des applications que vous avez.
-    - Les "apps" (lignes 175 à 204). \
-    Adaptez ces lignes en fonction des applications que vous avez.
+    - Les applications : raccourcis, workspace de lancement, lancement à l'ouverture de la session... (lignes 143 à 176).
 
 Si quand vous démarrez votre session, vous n'avez pas internet. Faîtes `$mod+n` : le gestionnaire de réseau va s'ouvrir et vous pourrez vous connecter au réseau que vous souhaitez.
