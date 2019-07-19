@@ -27,8 +27,8 @@ Vous pouvez regarder [ce petit tutoriel](https://www.youtube.com/watch?v=MfEehZF
 ## i3wm
 
 [i3wm](https://i3wm.org/) est un gestionnaire de fenêtre. Avant de continuer, je vous conseille très fortement de regarder les deux excellentes vidéos faites par [Grafikart](https://www.grafikart.fr/) pour comprendre :
-- [ce qu'est i3wm](https://www.youtube.com/watch?v=oHbJK6r2Xwo)
-- [comment configurer i3wm](https://www.youtube.com/watch?v=J07s8C8IvT4).
+- [ce qu'est i3wm](https://www.youtube.com/watch?v=J07s8C8IvT4),
+- [comment configurer i3wm](https://www.youtube.com/watch?v=oHbJK6r2Xwo).
 
 Ensuite, vous pouvez suivre la marche que je vous propose pour installer i3wm **dans KDE** et profiter de tous ses utilitaires. Je vous propose aussi ma configuration (la plus petite possible) pour profiter de toutes les fonctionnalités de KDE et de ses utilitaires en installant un minimum de paquets supplémentaires (seulement `feh` pour le fond d'écran et `fonts-font-awesome` pour les icônes dans le nom des workspaces).
 
