@@ -37,10 +37,10 @@ Dans tous les autres tutoriaux proposés sur internet, il faut normalement insta
 Voici donc comment je m'y prends :
 
 1. Exécuter la commande `sudo apt install fonts-font-awesome feh i3`. \
-Elle permet d'installer `fonts-font-awesome`, `feh` et `i3wm` avec la commande : \
-2. Exécuter la commande `echo "export KDEWM=/usr/bin/i3" > ~/.config/plasma-workspace/env/set_window_manager.sh`. \
-Elle crée un script dans le dossier `~/.config/plasma-workspace/env` (qui sera exécuté à chaque début de session) pour définir i3wm comme le gestionnaire de fenêtre.
-3. Copier mes fichiers de configuration de i3 qui se trouvent dans le dépôt : `.config/i3/config` et `.config/i3status/config`.
+Elle permet d'installer `fonts-font-awesome`, `feh` et `i3wm`.
+2. Copier mes fichiers de configuration de i3 qui se trouvent dans le dépôt : `.config/i3/config` et `.config/i3status/config`.
+
+La première fois que vous vous connecterez, il vous faudra choisir i3wm comme gestionnaire de fenêtre en bas de l'écran.
 
 **Attention** : avant de redémarrer votre session pour pouvoir utiliser i3wm, je vous conseille très fortement de :
 1. lire les 2 fichiers de configuration, surtout `.config/i3/config`, dans lequel je définis des raccourcis claviers qui doivent être nécessairement connus sous peine de ne pouvoir rien faire.
